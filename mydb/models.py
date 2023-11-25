@@ -17,5 +17,9 @@ class emplyoee(models.Model):
     password=models.CharField(max_length=10)
 
 
+class adminlogin(models.Model):
+     a_id=models.CharField(max_length=5)
+     password=models.CharField(max_length=10)
+
 def __str__(self):
         return self.name
