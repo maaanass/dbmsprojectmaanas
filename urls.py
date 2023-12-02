@@ -13,19 +13,16 @@ Class-based views
 Including another URLconf
     1. Import the include() function: from django.urls import include, path
     2. Add a URL to urlpatterns:  path('blog/', include('blog.urls'))
-
 """
-import os
 import sys
+import os
 from django.contrib import admin
 from django.urls import path
-from mydb.views import login,success_page,admin_success_page,adminredirect,adminloginpage,member_reset_password_page,reset_password
+from mydb.views import login,success_page,admin_success_page,adminredirect,adminloginpage
 
-import sys
-print(sys.path)
 
-#BASE_DIR = os.path.dirname(os.path.dirname(os.path.abspath(__file__)))
-#sys.path.append(BASE_DIR)
+BASE_DIR = os.path.dirname(os.path.dirname(os.path.abspath(__file__)))
+sys.path.append(BASE_DIR)
 urlpatterns = [
     path('admin/', admin.site.urls),
     path('login/', login, name='login'),
@@ -34,7 +31,5 @@ urlpatterns = [
     path('adminredirect/',adminredirect, name='adminredirect'),
     path('adminlogin/',adminloginpage, name='adminlogin'),
     path('admin_success_page/<int:user_id>/',admin_success_page,name='admin_success_page'),
-    path('member_reset_password_page/<int:user_id>/', member_reset_password_page, name='member_reset_password_page'),
-    path('reset_password/<int:user_id>/', reset_password, name='reset_password')
 ]
 

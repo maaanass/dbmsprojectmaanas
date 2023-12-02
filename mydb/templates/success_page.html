@@ -15,5 +15,14 @@
         <p>PHONE NO: {{ user.phno }}</p>
         <!-- Add other details as needed -->
     {% endif %}
+
+    <form method="get" action="{% url 'login' %}">
+        <button type="submit">logout</button>
+    </form>
+    <form method="post" action="{% url 'member_reset_password_page' user_id=user.id %}">
+        {% csrf_token %}
+        <button type="submit">Reset Password</button>
+    </form>
+    
 </body>
 </html>
