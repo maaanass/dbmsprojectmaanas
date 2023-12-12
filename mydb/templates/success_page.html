@@ -14,7 +14,7 @@
         <p>Member ID: {{ user.m_id }}</p>
         <p>PHONE NO: {{ user.phno }}</p>
         <p>current package: {{ user.package_name }}</p>
-        <!-- Add other details as needed -->
+        <p>Your Trainer: {{ user.e_id.name }}</p>
     {% endif %}
 
     <form method="get" action="{% url 'login' %}">
