@@ -14,7 +14,7 @@ class members(models.Model):
     package_name = models.CharField(max_length=100)
     m_id = models.CharField(max_length=50, unique=True)  # Assuming a unique member ID
     password = models.CharField(max_length=255)  # Storing passwords as plaintext is not recommended in production
-    e_id = models.ForeignKey(employee, on_delete=models.CASCADE)
+    e_id = models.ForeignKey(employee,related_name='members', on_delete=models.CASCADE)
 
 
 class adminlogin(models.Model):
