@@ -1,29 +1,60 @@
-<!-- login.html -->
 <!DOCTYPE html>
 <html lang="en">
+{% load static %}
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Admin Login Page</title>
+    <link rel="stylesheet" type="text/css" href="{% static 'memberlogin.css' %}">
+    <title>Member Login Page</title>
+    
 </head>
 <body>
-    <h2>Admin Login Page</h2>
+    <script>
+        function clearmessages() {
+            {% if messages %}
+                {% for message in messages %}
+                    alert("{{ message }}");
+                {% endfor %}
+            {% endif %}
+        }
+        window.onload = clearmessages;
+        </script>
 
-    {% if messages %}
-        {% for message in messages %}
-            <p>{{ message }}</p>
-        {% endfor %}
-    {% endif %}
 
+
+<div class="login-box">
     <form method="post" action="{% url 'adminlogin' %}">
+        <center>
+            <h1 style="color: blue;">Login</h1>
+        </center>
         {% csrf_token %}
-        <label for="a_id">Admin ID:</label>
-        <input type="text" name="a_id" required><br>
-
-        <label for="password">Password:</label>
-        <input type="password" name="password" required><br>
-
+    <div class="user-box">
+      <input type="text" name="a_id" required>
+      <label>Admin Id</label>
+    </div>
+    <div class="user-box">
+      <input type="password" name="password" required>
+      <label>Password</label>
+    </div>
+    <center>
         <button type="submit">Login</button>
-    </form>
+    </center>
+  </form>
+  <br>
+  
+ <script>
+    document.getElementById('refer').addEventListener('click', function(event) {
+        event.preventDefault(); // Prevent the default anchor behavior
+
+        // You can perform additional actions here if needed before redirection
+
+        // Redirect to the specified URL
+        window.location.href = this.getAttribute('href');
+    });
+</script>
+
+</div>
+
+
 </body>
 </html>

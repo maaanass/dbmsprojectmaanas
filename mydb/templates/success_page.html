@@ -1,29 +1,81 @@
-<!-- success_page.html -->
 <!DOCTYPE html>
 <html lang="en">
+{% load static %}
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Success Page</title>
+    <link rel="stylesheet" type="text/css" href="{% static 'style.css' %}">
+    <title>GymPRO</title>
 </head>
 <body>
-    <h2>Success Page</h2>
+    <!-- Navbar -->
+    <nav>
+      <a href="#" class="logo">GymPRO</a>
+      <div class="toggle" onclick="toggleMenu();"></div>
 
-    {% if user %}
-        <p>Name: {{ user.name }}</p>
-        <p>Member ID: {{ user.m_id }}</p>
-        <p>PHONE NO: {{ user.phno }}</p>
-        <p>current package: {{ user.package_name }}</p>
-        <p>Your Trainer: {{ user.e_id.name }}</p>
-    {% endif %}
+      <!-- Menu -->
+      <ul class="menu">
+          <li><a href="#home" onclick="toggleMenu();">Home</a></li>
+          <li><a href="#about" onclick="toggleMenu();">About</a></li>
+          <li><a href="#contact" onclick="toggleMenu();">Contact</a></li>
+          
+      </ul>
+  </nav>
+  <section>
+  
+    <div class="main-contain">
+      <div class="row">
+        <div class="container">
+          <h1>Hello</h1>
+          <h1> {{ user.name }}  !!</h1>
+        </div>
+       
+        <div class="container1">
+        
+        </div>
+      </div>
+      <div class="container-3">
+        
+        <div class="textfields">
+          <h1>Details.</h1>
+          
+          {% if user %}
+            <p>Name: {{ user.name }}</p>
+            <br>
+            <p>Member ID: {{ user.m_id }}</p>
+            <br>
+            <p>Phone No: {{ user.phno }}</p> <br>
+            <p>Current Package: {{ user.package_name }}</p><br>
+            <p>Your Trainer: {{ user.e_id.name }}</p>
+             {% endif %}
+        <div class="btndiv">
+          <form method="get" action="{% url 'login' %}">
+            <button type="submit">logout</button>
+          </form>
+          <form method="post" action="{% url 'member_reset_password_page' user_id=user.id %}">
+            {% csrf_token %} 
+            <button type="submit">Reset Password</button>
+         </form>
 
-    <form method="get" action="{% url 'login' %}">
-        <button type="submit">logout</button>
-    </form>
-    <form method="post" action="{% url 'member_reset_password_page' user_id=user.id %}">
-        {% csrf_token %}
-        <button type="submit">Reset Password</button>
-    </form>
+        </div>
+        
+      
+        </div>
+      </div>
+      
+    </div>
     
+    
+   
+    
+  
+  </section>
+  
+ <footer id="footer">
+    ishowdbms
+ </footer>
+  
+  
+ 
 </body>
 </html>

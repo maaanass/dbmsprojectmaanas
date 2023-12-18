@@ -1,0 +1,205 @@
+* {
+    margin: 0;
+    padding: 0;
+    list-style: none;
+    text-decoration: none;
+    font-family: "Poppins", sans-serif;
+    box-sizing: border-box;
+    scroll-behavior: smooth;
+    color:white;
+  }
+
+  :root {
+    --main-color:white;
+    --second-color: white;
+  }
+  body{
+    background-image: url("./images/bg1.png");
+    background-size: cover;
+    background-repeat: no-repeat;
+   
+   
+
+}
+nav {
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    padding: 25px 100px;
+    background: #403838;
+    box-shadow: 0 1px 4px #403838;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    z-index: 1000;
+    transition: 0.5s;
+  }
+
+  /* Logo CSS */
+  .logo {
+    text-transform: uppercase;
+    font-size: 1.4rem;
+    color: var(--second-color);
+    font-weight: 700;
+  }
+  ul {
+    display: flex;
+  }
+  ul li a {
+    padding: 10px 22px;
+    color: var(--second-color);
+    border-radius: 2px;
+    font-weight: 600;
+    letter-spacing: 1px;
+    margin-left: 10px;
+  }
+  ul li a:hover {
+    background: var(--main-color);
+    color: blue;
+    border: none;
+  }
+
+
+section {
+  padding-top: 100px;
+}
+
+#footer {
+    position:fixed;
+    padding-top: 10px;
+    bottom: 0;
+    width: 100%;
+    /* Height of the footer*/
+    height: 40px;
+    background: #403838;
+    text-align: center;
+}
+
+
+
+.container{
+  padding: 30px;
+  background-image: none;
+  align-items: center;
+  margin-top: 90pxpx;
+  height: 280px;
+  width: 700px;
+  border-radius: 90px;
+  margin: 20px;
+  box-shadow: 0 8px 32px 0 #403838;
+  backdrop-filter: blur( 9.5px );
+  -webkit-backdrop-filter: blur( 9.5px );
+  border-radius: 10px;
+}
+
+.container1{
+  background-image: url("./images/trainerperks.png");
+  background-size: cover;
+  background-repeat: no-repeat;
+  margin-top: 90pxpx;
+  height: 250px;
+  width: 700px;
+  border-radius: 90px;
+  margin: 20px;
+  box-shadow: 0 8px 32px 0 #403838;
+  backdrop-filter: blur( 9.5px );
+  -webkit-backdrop-filter: blur( 9.5px );
+  border-radius: 10px;
+}
+
+.main-contain{
+  display: flex;
+  align-items: center;
+  gap: 90px;
+  margin-left: 8rem;
+  
+}
+
+.textfields{
+  padding: 30px;
+  align-items: center;
+
+}
+
+.textfields h1{
+  font-size: 55px;
+}
+
+
+.container-3{
+  margin-top: 90pxpx;
+  height: 590px;
+  width: 400px;
+  border-radius: 90px;
+  margin: 20px;
+  background: rgba( 139, 87, 42, 0.05 );
+  box-shadow: 0 8px 32px 0 #403838;
+  backdrop-filter: blur( 9.5px );
+  -webkit-backdrop-filter: blur( 9.5px );
+  border-radius: 10px;
+}
+
+button {
+  padding-left: 33px;
+  padding-right: 33px;
+  padding-bottom: 16px;
+  padding-top: 16px;
+  border-radius: 9px;
+  background: #ED6214;
+  border: none;
+  font-family: inherit;
+  text-align: center;
+  cursor: pointer;
+  transition: 0.4s;
+ }
+ 
+ button:hover {
+  box-shadow: 7px 5px 56px -14px blue;
+ }
+ 
+ button:active {
+  transform: scale(0.97);
+  box-shadow: 7px 5px 56px -10px blue;
+ }
+
+.container h1{
+    
+  font-size: 60px;
+  font-weight: 700;
+}
+
+.btndiv{
+  margin-top: 50px;
+  display: flex;
+  align-items: center;
+  gap: 50px;
+  
+}
+
+table {
+  border-collapse: collapse;
+  width: 100%;
+  
+}
+
+
+th, td {
+  border: 1px solid #ddd;
+  padding: 8px;
+  text-align: left;
+}
+
+th {
+  background-color: #403838;
+  color: white;
+}
+
+tr:hover {
+  background-color: black;
+}
+
+.txt{
+    font-size: 18px;
+    margin-top: 10px;
+}

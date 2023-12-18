@@ -1,0 +1,108 @@
+<!DOCTYPE html>
+<html lang="en">
+    <head>
+        {% load static %}
+        <meta charset="UTF-8">
+        <meta name="viewport" content="width-device-width, initial-scale=1.0">
+        <link rel="stylesheet" href="{% static 'esuccess.css' %}">
+        <title>Success Page</title>
+    </head>
+    <body>
+        <!-- Navbar -->
+    <nav>
+        <a href="#" class="logo">GymPRO</a>
+        <div class="toggle" onclick="toggleMenu();"></div>
+  
+        <!-- Menu -->
+        <ul class="menu">
+            <li><a href="#home" onclick="toggleMenu();">Home</a></li>
+            <li><a href="#about" onclick="toggleMenu();">About</a></li>
+            <li><a href="#about" onclick="toggleMenu();">Contact</a></li>
+            
+        </ul>
+    </nav>
+    <section>
+
+      <div class="main-contain">
+        <div class="row">
+          <div class="container">
+            <h1 style="font-size: 80px;">Hello</h1>
+            <h1 style="font-size: 80px; color: #edd014;"> {{ user.name }}  !!</h1>
+          </div>
+         
+          <div class="container1">
+          </div>
+        </div>
+        <div class="container-3">
+          
+          <div class="textfields">
+            <h1 style="color: #edd014; padding-bottom: 10px;">Details.</h1>
+            
+            <div class="txt">
+                {% if user %}
+                <p>Name: {{user.name}}</p>
+                <br>
+                <p>Trainer ID: {{user.e_id}}</p>
+                <br>
+                <p>Phone No: {{user.phno}}</p>
+                <br>
+                <p>Current Package: {{ user.curr_package}}</p>
+                <br>
+            </div>
+
+              
+                <h3>Members:</h3>
+                <br>
+                <div class="tb">
+                    <table>
+                        <thead>
+                        <tr>
+                            <th>Name</th>
+                            <th>Phone No</th>
+                            <th>Package Name</th>
+                            <th>Member ID</th>
+                        </tr>
+                        </thead>
+                    <tbody>
+                        {% for member in members %}
+                            <tr>
+                                <td>{{ member.name }}</td>
+                                <td>{{ member.phno }}</td>
+                                <td>{{ member.package_name }}</td>
+                                <td>{{ member.m_id }}</td>
+                            </tr>
+                        {% endfor %}
+                    </tbody>
+                </table>
+                </div>
+                
+
+            {% endif %}
+            <div class="btndiv">
+                <form method="get" action="{% url 'trainer_login' %}">
+                <button type="submit">logout</button>
+                </form>
+                <form method="post" action="{% url 'trainer_reset_password_page' user_id=user.id %}">
+                {% csrf_token %}
+                <button type="submit">Reset Password</button>
+                </form>
+            
+        </div>
+        
+      
+    </div>
+  </div>
+  
+</div>
+
+
+</section>
+
+<footer id="footer">
+ishowdbms
+</footer>
+
+
+
+    </body>
+</html>

@@ -1,13 +1,14 @@
-<!-- login.html -->
 <!DOCTYPE html>
 <html lang="en">
+{% load static %}
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" type="text/css" href="{% static 'memberlogin.css' %}">
     <title>Member Login Page</title>
+    
 </head>
 <body>
-    <h2>Login Page</h2>
     <script>
         function clearmessages() {
             {% if messages %}
@@ -18,19 +19,53 @@
         }
         window.onload = clearmessages;
         </script>
-        
+
+
+
+<div class="login-box">
     <form method="post" action="{% url 'login' %}">
+        <center>
+            <h1 style="color: blue;">Login</h1>
+        </center>
         {% csrf_token %}
-        <label for="m_id">Member ID:</label>
-        <input type="text" name="m_id" required><br>
-
-        <label for="password">Password:</label>
-        <input type="password" name="password" required><br>
-
+    <div class="user-box">
+      <input type="text" name="m_id" required>
+      <label>Member Id</label>
+    </div>
+    <div class="user-box">
+      <input type="password" name="password" required>
+      <label>Password</label>
+    </div>
+    <center>
         <button type="submit">Login</button>
-    </form>
-    <form method="get" action="{% url 'adminredirect' %}">
-        <p>if you are admin <button type="submit">click here</button></p>
-    </form>
+    </center>
+  </form>
+  <br>
+  <center>
+    <p style="color: #fff;">if you are admin 
+        <a href="{% url 'adminredirect' %}" id="refer">click here</a>
+    </p>
+  </center>
+  <center>
+    <p style="color: #fff;">if you are trainer 
+        <a href="{% url 'trainer_login' %}" id="refer">click here</a>
+    </p>
+  </center>
+  
+
+<script>
+    document.getElementById('refer').addEventListener('click', function(event) {
+        event.preventDefault(); // Prevent the default anchor behavior
+
+        // You can perform additional actions here if needed before redirection
+
+        // Redirect to the specified URL
+        window.location.href = this.getAttribute('href');
+    });
+</script>
+
+</div>
+
+
 </body>
 </html>
