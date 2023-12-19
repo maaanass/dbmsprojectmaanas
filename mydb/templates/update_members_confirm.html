@@ -1,0 +1,31 @@
+<!DOCTYPE html>
+<html lang="en">
+{% load static %}
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Update Member Confirmation</title>
+    <link rel="stylesheet" type="text/css" href="{% static 'update_employee_confirm.css' %}">
+    <style>
+        @import url('https://fonts.googleapis.com/css2?family=Plus+Jakarta+Sans:wght@200;300;400;500;600;700;800&family=Poppins:wght@300;400;500;600;700;800;900&display=swap');
+      </style>
+</head>
+<body>
+<div class="main">
+    <div class="sub">
+        <h1>Update Member Confirmation</h1>
+        <center>
+            <img src="{% static 'verified.gif' %}" alt="Verified" class="confirmation-image" />
+            <p>Member details updated successfully.</p>
+            <a href="{% url 'members_list' %}">Back</a>
+        </center>
+
+       
+        
+    </div>
+</div>
+
+
+</body>
+</html>

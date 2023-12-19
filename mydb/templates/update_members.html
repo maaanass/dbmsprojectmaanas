@@ -1,0 +1,30 @@
+<!DOCTYPE html>
+<html lang="en">
+{% load static %}
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" type="text/css" href="{% static 'update_employee.css' %}">
+    <title>Update Members</title>
+</head>
+<body>
+    <div class="main">
+        <div class="main-sub">
+
+<h1>Update Members</h1>
+
+<form method="post" action="">
+    {% csrf_token %}
+    {{ form.as_p }}
+    <div class="btns">
+    <button type="submit">Next</button>
+    </div>
+</form>
+        </div>
+    </div>
+    <footer id="footer">
+        ishowdbms
+    </footer>
+</body>
+</html>

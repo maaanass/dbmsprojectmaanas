@@ -1,0 +1,169 @@
+* {
+    margin: 0;
+    padding: 0;
+    list-style: none;
+    text-decoration: none;
+    font-family: "Poppins", sans-serif;
+    box-sizing: border-box;
+    scroll-behavior: smooth;
+    color:white;
+  }
+
+  :root {
+    --main-color:white;
+    --second-color: white;
+  }
+  body{
+    background-image: url("./images/images.jpg");
+    background-size: cover;
+    background-repeat: no-repeat;
+   }
+nav {
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    padding: 25px 100px;
+    background: #403838;
+    box-shadow: 0 1px 4px rgba(146, 161, 176, 0.15);
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    z-index: 1000;
+    transition: 0.5s;
+  }
+
+  /* Logo CSS */
+  .logo {
+    text-transform: uppercase;
+    font-size: 1.4rem;
+    color: var(--second-color);
+    font-weight: 700;
+  }
+  ul {
+    display: flex;
+  }
+  ul li a {
+    padding: 10px 22px;
+    color: var(--second-color);
+    border-radius: 2px;
+    font-weight: 600;
+    letter-spacing: 1px;
+    margin-left: 10px;
+  }
+  ul li a:hover {
+    background: var(--main-color);
+    color: blue;
+    border: none;
+  }
+
+
+section {
+  padding-top: 100px;
+}
+
+h1{
+    font-size: 60px;
+    color: rgb(225, 179, 14);
+    padding-left: 20px;
+    padding-right: 20px;
+    padding-top: 10px;
+    padding-bottom: 10px;
+    box-shadow: 0 8px 32px 0 #403838;
+    backdrop-filter: blur( 9.5px );
+    -webkit-backdrop-filter: blur( 9.5px );
+    border-radius: 10px;
+    margin-bottom: 20px;
+}
+
+#footer {
+    position:relative;
+    padding-top: 10px;
+    bottom: 0;
+    width: 100%;
+    /* Height of the footer*/
+    height: 40px;
+    background: #403838;
+    text-align: center;
+}
+
+.btns{
+    margin-top: 20px;
+    margin-bottom: 20px;
+}
+.main{
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
+form {
+    margin-bottom: 20px;
+    padding: 20px;
+    border: 1px solid #ddd;
+    border-radius: 5px;
+}
+
+form label {
+    color: rgb(225, 179, 14);
+    font-weight: bold;
+}
+
+form input, form select, form textarea {
+    width: 100%;
+    padding: 8px;
+    margin-bottom: 10px;
+    box-sizing: border-box;
+    color: black;
+}
+
+table{
+    margin-top: 20px;
+    font-size: 18px;
+    font-weight: 600;
+    box-shadow: 0 8px 32px 0 #403838;
+    backdrop-filter: blur( 9.5px );
+    -webkit-backdrop-filter: blur( 9.5px );
+    border-radius: 10px;
+}
+
+table td a{
+    background-color: #ff0000;
+    width: 100%;
+    padding-right: 10px;
+    padding-left: 10px;
+}
+
+ button{
+    padding-left: 20px;
+    padding-right: 20px;
+    padding-top: 10px;
+    padding-bottom: 10px;
+    border-radius: 50px;
+    margin-top: 20px;
+    background-color:  rgb(225, 179, 14);
+    border: none;
+    margin-left: 20px;
+    font-size: 20px;
+    color: black;
+}
+
+ button:hover{
+    background: blue;
+    color: #fff;
+    box-shadow: 0 0 5px blue,
+                0 0 25px blue,
+                0 0 50px blue,
+                0 0 100px blue;
+}
+
+
+@keyframes btn-anim1 {
+    0% {
+      left: -100%;
+    }
+  
+    50%,100% {
+      left: 100%;
+    }
+  }

@@ -1,0 +1,86 @@
+<!DOCTYPE html>
+<html lang="en">
+{% load static %}
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Employee List</title>
+    <link rel="stylesheet" type="text/css" href="{% static 'employee_list.css' %}">
+    <style>
+        @import url('https://fonts.googleapis.com/css2?family=Plus+Jakarta+Sans:wght@200;300;400;500;600;700;800&family=Poppins:wght@300;400;500;600;700;800;900&display=swap');
+      </style>
+</head>
+<body>
+    <nav>
+        <a href="#" class="logo">GymPRO</a>
+        <div class="toggle" onclick="toggleMenu();"></div>
+  
+        <!-- Menu -->
+        <ul class="menu">
+            <li><a href="#home" onclick="toggleMenu();">Home</a></li>
+            <li><a href="#about" onclick="toggleMenu();">About</a></li>
+            <li><a href="#about" onclick="toggleMenu();">Contact</a></li>
+            
+        </ul>
+    </nav>
+<section>
+
+    <div class="main">
+        <div class="main-sub">
+            <h1>Employee List</h1>
+
+            <form method="post" action="{% url 'employee_list' %}">
+                {% csrf_token %}
+                {{ form.as_p }}
+                <button type="submit">Add</button>
+            </form>
+            
+            <form method="post" action="{% url 'delete_employee' %}">
+                {% csrf_token %}
+                <table border="1">
+                    <tr>
+                        <th>Select</th>
+                        <th>ID</th>
+                        <th>Name</th>
+                        <th>Phone Number</th>
+                        <th>Current Package</th>
+                        <th>Employee ID</th>
+                        <th>Password</th>
+                        <th scope="col">Actions</th>
+                    </tr>
+                    {% for employee in employees %}
+                    <tr>
+                        <td><input type="checkbox" name="selected_ids" value="{{ employee.id }}"></td>
+                        <td>{{ employee.id }}</td>
+                        <td>{{ employee.name }}</td>
+                        <td>{{ employee.phno }}</td>
+                        <td>{{ employee.curr_package }}</td>
+                        <td>{{ employee.e_id }}</td>
+                        <td>{{ employee.password }}</td>
+                        <td>
+                            <a href="{% url 'update_employee' employee.id %}">Update</a>
+                        </td>
+                    </tr>
+                    {% endfor %}
+                </table>
+                <div class="btns">
+                    <button type="submit">Delete</button>
+                
+                    </div>
+                
+            </form>
+            <form method="get" action="{% url 'adminsucess' %}">
+                <button type="submit">Back</button>
+            </form>
+           
+        </div>
+    </div>
+    
+</section>
+
+<footer id="footer">
+    ishowdbms
+</footer>
+</body>
+</html>

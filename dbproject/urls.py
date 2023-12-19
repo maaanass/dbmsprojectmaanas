@@ -20,6 +20,8 @@ import sys
 from django.contrib import admin
 from django.urls import path
 from mydb.views import login,success_page,admin_success_page,adminredirect,adminloginpage,member_reset_password_page,reset_password,trainer_login,trainer_reset_password_page,trainer_success
+from mydb.views import employee_list, delete_employee, update_employee,update_employee_confirm
+from mydb.views import members_list, delete_members, update_members,update_members_confirm,adminsucess
 from django.conf import settings
 from django.conf.urls.static import static
 import sys
@@ -40,7 +42,17 @@ urlpatterns = [
     path('trainer_login/',trainer_login,name='trainer_login'),
     path('esuccess/<int:user_id>/',trainer_success,name='trainer_success'),
     path('trainer_reset_password/<int:user_id>/',trainer_reset_password_page,name='trainer_reset_password_page'),
-    path('reset_password/<int:user_id>/',reset_password,name='reset_password')
+    path('reset_password/<int:user_id>/',reset_password,name='reset_password'),
+    path('employee_list/', employee_list, name='employee_list'),
+    path('delete_employee/', delete_employee, name='delete_employee'),
+    path('update_employee/<int:employee_id>/', update_employee, name='update_employee'),
+    path('update_employee/<int:employee_id>/confirm/', update_employee_confirm, name='update_employee_confirm'),
+    path('members_list/', members_list, name='members_list'),
+    path('delete_members/', delete_members, name='delete_members'),
+    path('update_members/<int:members_id>/', update_members, name='update_members'),
+    path('update_members/<int:members_id>/confirm/', update_members_confirm, name='update_members_confirm'),
+    path('adminsucess/', adminsucess, name='adminsucess'),
+
 ]
 
 if settings.DEBUG:

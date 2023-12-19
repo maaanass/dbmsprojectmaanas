@@ -1,17 +1,43 @@
-<!-- success_page.html -->
 <!DOCTYPE html>
 <html lang="en">
+{% load static %}
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Success Page</title>
+    <link rel="stylesheet" type="text/css" href="{% static 'adminsucess.css' %}">
+    <title>Admin</title>
 </head>
 <body>
-    <h2>Success Page</h2>
-
-    {% if user %}
-        <p>HELLO ADMIN</p>
-        <!-- Add other details as needed -->
-    {% endif %}
+    <nav>
+        <a href="#" class="logo">GymPRO</a>
+        <div class="toggle" onclick="toggleMenu();"></div>
+  
+        <!-- Menu -->
+        <ul class="menu">
+            <li><a href="#home" onclick="toggleMenu();">Home</a></li>
+            <li><a href="#about" onclick="toggleMenu();">About</a></li>
+            <li><a href="#about" onclick="toggleMenu();">Contact</a></li>
+            
+        </ul>
+    </nav>
+    <section>
+        <div class="container">
+            <h1 style="font-size: 80px;">Hello !</h1>
+            <h1 style="font-size: 80px; color: #edd014;">Admin</h1>
+          </div>
+          <div class="container1">
+            <div class="txt">
+                <a href="{% url 'employee_list' %}">View Employees</a></li>
+                <a href="{% url 'members_list' %}">View Members</a></li>
+                <a href="{% url 'adminredirect' %}">Logout</a></li>
+            </div>
+                
+        
+        </div>
+    </section>
+    
+    <footer id="footer">
+        ishowdbms
+    </footer>
 </body>
 </html>
