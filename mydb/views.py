@@ -67,7 +67,7 @@ def admin_success_page(request, user_id):
 def member_reset_password_page(request, user_id):
     return render(request, 'member_reset_password_page.html', {'user_id': user_id})
 
-def reset_password(request, user_id):
+def member_reset_password(request, user_id):
     if request.method == 'POST':
         new_password = request.POST['new_password']
         confirm_new_password = request.POST['confirm_new_password']
@@ -75,7 +75,7 @@ def reset_password(request, user_id):
         try:
             user = members.objects.get(id=user_id)
 
-            if new_password == confirm_new_password:
+            if new_password == confirm_new_password :
                 # Update the password in the database
                 user.password = new_password
                 user.save()
